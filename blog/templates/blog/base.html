@@ -1,0 +1,33 @@
+{% load static %}
+
+<html>
+    <head>
+            <!-- 부트스트랩 추가-->       
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                        
+            <!-- CSS 파일 추가 알려줌-->
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">    
+            
+            <!-- 폰트 바꾸기 -->
+            <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+            <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
+        
+        
+        <div class="content container">
+        
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}    <!-- 폰트 바꾸기 -->
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+               
+    </body>
+</html>

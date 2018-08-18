@@ -1,28 +1,9 @@
-{% load static %}
 
-<html>
-    <head>
-            <!-- 부트스트랩 추가-->       
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                        
-            <!-- CSS 파일 추가 알려줌-->
-            <link rel="stylesheet" href="{% static 'css/blog.css' %}">    
-            
-            <!-- 폰트 바꾸기 -->
-            <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+                    <!--  이 코드를 모든 컨텐츠 블록에 대한 템플릿의 일부입니다.  -->
+                {% extends 'blog/base.html' %}
+                
+                {% block content %}
 
-            <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="">Django Girls Blog</a></h1>
-        </div>
-        
-        
-        <div class="content container">
-        
-            <div class="row">
-                    <div class="col-md-8">
                     {% for post in posts %}
                         <div class="post">
                         
@@ -30,21 +11,10 @@
                                 <p>published: {{ post.published_date }}</p>
                             </div>
                         
-                                <h1><a href="">{{ post.title }}</a></h2>
+                                <h1><a href="">{{ post.title }}</a></h1>
                                 <p>{{ post.text|linebreaksbr }}</p>
                             
                         </div>
                     {% endfor %}
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
-</html>
+                
+                {% endblock %}
